@@ -1,0 +1,152 @@
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+label.dark-button {
+  position: fixed;
+  display: inline-block;
+  top: 1vh;
+  right: 1vh;
+  width: 3vw;
+  height: 1.5vw;
+  border: 3px solid gray;
+  border-radius: 1.5vw;
+}
+label.dark-button input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+label.dark-button span.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 1.5vw;
+}
+label.dark-button span.slider:before {
+  position: absolute;
+  content: "";
+  height: calc(1.5vw - 8px);
+  width: calc(1.5vw - 8px);
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+label.dark-button input:checked + .slider {
+  background-color: #525252;
+}
+label.dark-button input:checked + .slider:before {
+  -webkit-transform: translateX(1.5vw);
+  -ms-transform: translateX(1.5vw);
+  transform: translateX(1.5vw);
+}
+label.dark-button input:focus + .slider {
+  box-shadow: 0 0 1px #525252;
+}
+
+div.card {
+  display: flex;
+  position: relative;
+  width: 7.5rem;
+}
+div.card > div.card {
+  position: absolute;
+}
+div.card img {
+  object-fit: cover;
+  width: 100%;
+}
+div.card.selected {
+  outline: 2px blue solid;
+  border-radius: 0.3rem;
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+main div.board {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 90vw;
+  border: solid gray 3px;
+  border-radius: 0.5rem;
+}
+main div.board div.upper-board {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 2rem);
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #007c00;
+}
+main div.board div.upper-board div.closed-deck {
+  display: flex;
+  width: 20%;
+}
+main div.board div.upper-board div.closed-deck div.closed-card-container {
+  background-color: #004d00;
+  width: 7.5rem;
+  box-shadow: inset 0 0 0 1px black;
+  border-radius: 0.3rem;
+}
+main div.board div.upper-board div.opened-cards {
+  display: flex;
+  width: 30%;
+}
+main div.board div.upper-board div.opened-cards div.opened-card-container {
+  background-color: #004d00;
+  width: 13.5rem;
+  box-shadow: inset 0 0 0 1px black;
+  border-radius: 0.3rem;
+}
+main div.board div.upper-board div.opened-cards div.opened-card-container div.card > div.card {
+  left: 40%;
+}
+main div.board div.upper-board div.foundations {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+}
+main div.board div.upper-board div.foundations div.card > div.card, main div.board div.upper-board div.closed-deck div.card > div.card, main div.board div.upper-board div.opened-cards div.card > div.card {
+  top: 0;
+}
+main div.board div.lower-board {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #004d00;
+  border-top: solid gray 3px;
+}
+main div.board div.lower-board > div.card-row div.card.empty > div.card {
+  top: 0;
+}
+main div.board div.lower-board > div.card-row div.card > div.card {
+  top: 12.5%;
+}
+
+/*# sourceMappingURL=style.css.map */
